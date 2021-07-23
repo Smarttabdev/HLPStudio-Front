@@ -1,0 +1,106 @@
+//admin pages
+
+.application {
+  font-family: "FuturaStd", sans-serif !important;
+}
+
+.vsm-title {
+  font-weight: bold;
+  font-size: 1.2rem !important;
+}
+
+.vsm-item {
+  padding: 0.4rem 0 !important;
+}
+
+.dropdown-menu.show:not(.dropup) {
+  width: 300px !important;
+  .b-calendar-inner {
+    width: 100% !important;
+  }
+}
+
+.dashboard {
+  .dropdown-toggle {
+    border-radius: 0;
+    padding-top: 0;
+    color: #5b5757 !important;
+    background-color: #e8e8e8 !important;
+    border-color: #d0d0d0 !important;
+  }
+  .v-input__slot {
+    border: 1px solid #979797 !important;
+    border-radius: 4px;
+    padding: 0 5px;
+  }
+  .prepend-icon {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    width: 30px;
+    border: 1px solid #979797;
+    padding: 6.5px 8px;
+    border-radius: 3px;
+    background: #d8d8d8;
+  }
+}
+.modal-backdrop {
+  background-color: #0000006e;
+}
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out, -webkit-transform 0.2s ease-out !important;
+}
+.modal-open {
+  padding-right: 0 !important;
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  .b-table {
+    width: 100%;
+
+    td {
+      padding: 0.2rem 0.5rem;
+    }
+    .v-input--selection-controls__input {
+      margin-right: 0;
+      .material-icons {
+        font-size: 20px;
+        margin: 2px;
+      }
+    }
+  }
+}
+
+.company {
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    .b-table {
+      width: 100%;
+
+      td {
+        padding: 0.5rem;
+      }
+      .v-input--selection-controls__input {
+        margin-right: 0;
+        .material-icons {
+          font-size: 20px;
+          margin: 2px;
+        }
+      }
+    }
+  }
+}
+
+.v-progress-circular {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.flex {
+  display: flex !important;
+}

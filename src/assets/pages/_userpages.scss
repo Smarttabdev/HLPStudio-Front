@@ -1,0 +1,149 @@
+// User Pages
+
+.app-logo {
+  height: $logo-height;
+  width: $logo-width;
+  background: url("./assets/images/logo-inverse.png");
+}
+
+.app-logo-inverse {
+  height: $logo-height;
+  width: $logo-width;
+  background: url("./assets/images/logo.png");
+}
+
+// .app-userpage {
+// }
+
+.app-login-box {
+  .app-logo {
+    margin-bottom: $layout-spacer-lg;
+  }
+
+  h4 {
+    margin-bottom: $layout-spacer-x;
+    font-weight: normal;
+
+    div {
+      opacity: 0.6;
+    }
+
+    span {
+      font-size: $font-size-lg;
+    }
+  }
+}
+
+.theme--light.v-messages {
+  color: red !important;
+}
+.error--text {
+  color: red !important;
+}
+
+.error-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #de5228;
+  color: white;
+  border-color: #d8ac2f;
+  padding: 20px 30px;
+  width: 300px;
+  z-index: 200;
+}
+
+.success-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #1dbb05;
+  color: white;
+  border-color: #12ba26;
+  padding: 20px 30px;
+  width: 300px;
+  z-index: 200;
+}
+
+.w-18 {
+  width: 18% !important;
+}
+
+.footer-social-list .icon:hover {
+  img {
+    filter: brightness(0.9) sepia(1) saturate(100000%) contrast(21%)
+      saturate(11) invert(70%);
+  }
+}
+
+.rd-navbar-share-list-item a:hover {
+  img {
+    filter: brightness(0.9) sepia(1) saturate(100000%) contrast(21%)
+      saturate(11) invert(70%);
+  }
+}
+
+.technology-mark {
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 1120px) {
+  .technology-mark img {
+    height: 25px !important;
+  }
+}
+
+@media (max-width: 1360px) {
+  .technology-mark img {
+    height: 30px !important;
+  }
+}
+
+@media (max-width: 930px) {
+  .technology-mark img {
+    height: 20px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .technology-mark {
+    display: block;
+    div {
+      padding: 10px;
+    }
+    img {
+      height: 30px !important;
+    }
+  }
+}
+
+.page-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 999;
+  .social-img {
+    margin-top: -9px;
+    filter: invert(100%);
+    max-width: none;
+    width: 21px;
+  }
+}
+
+//slider
+.swiper-container {
+  .swiper-wrapper {
+    .swiper-slide {
+      .swiper-slide-caption {
+        .container {
+          h1 {
+            // text-shadow: #fc0 1px 0 10px;
+          }
+        }
+      }
+    }
+  }
+}

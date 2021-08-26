@@ -53,12 +53,12 @@ export default {
         {
           title: "Chat",
           icon: "pe-7s-date",
-          href: "/admin/chat",
+          href: "/chat",
         },
         {
           title: "Gallery",
           icon: "pe-7s-date",
-          href: "/admin/gallery",
+          href: "/gallery",
         },
       ],
 

@@ -208,10 +208,13 @@
             cols="12"
             class="owl-item m-0 p-0 pt-3"
             v-for="project in projects"
-            :key="project.id"
+            :key="project.img"
             style="transition: transform 1.5s ease-out, opacity 0.5s ease-in"
           >
-            <article class="thumbnail thumbnail-mary m-0">
+            <article
+              class="thumbnail thumbnail-mary m-0"
+              v-if="project.filter !== 'Animation'"
+            >
               <div class="thumbnail-mary-figure">
                 <div class="zoomin frame">
                   <img :src="project.img" alt="" width="420" height="308" />
@@ -226,6 +229,13 @@
                 /></a>
               </div>
             </article>
+            <video
+              controls
+              :src="project.img"
+              class="w-100 h-180p"
+              alt
+              v-if="project.filter === 'Animation'"
+            />
           </b-col>
         </transition-group>
       </div>
@@ -697,6 +707,14 @@ export default {
         title: "Animation",
         filter: "Type 2",
       },
+      {
+        title: "Autocad",
+        filter: "Type 2",
+      },
+      {
+        title: "Floorplan",
+        filter: "Type 2",
+      },
     ],
     tempItems: [],
     experiences: [
@@ -770,67 +788,16 @@ export default {
         description: "Architecture Interior Visualization",
       },
     ],
-    projects: [
-      {
-        id: 3,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "AR/VR",
-      },
-      {
-        id: 2,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Product",
-      },
-      {
-        id: 1,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Exterior",
-      },
-      {
-        id: 4,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Interior",
-      },
-      {
-        id: 5,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "AR/VR",
-      },
-      {
-        id: 6,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Clo3D",
-      },
-      {
-        id: 7,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Animation",
-      },
-      {
-        id: 8,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Animation",
-      },
-      {
-        id: 9,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Interior",
-      },
-      {
-        id: 10,
-        img: "images/userpages/aboutus-timeline1.png",
-        filter: "Interior",
-      },
-    ],
+    projects: [],
     carouselCount: 4,
   }),
   methods: {
     filter(item) {
-      console.log(item);
       this.filterItem = item;
       if (item === "All") {
         this.projects = this.tempItems;
       } else {
+        console.log(item);
         this.projects = this.tempItems.filter((val) => val.filter === item);
       }
     },
@@ -839,6 +806,16 @@ export default {
     },
     onSlideChange() {
       console.log("slide change");
+    },
+    importAll(r, filter) {
+      r.keys()
+        .map(r)
+        .map((item) => {
+          this.projects.push({
+            img: item,
+            filter: filter,
+          });
+        });
     },
   },
   mounted() {
@@ -857,6 +834,70 @@ export default {
         }
       }
     };
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Animation",
+        false,
+        /\.(mp4)$/
+      ),
+      "Animation"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/AR-VR",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "AR/VR"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Autocad",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "Autocad"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Clo3d",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "Clo3D"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Exterior",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "Exterior"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Interior",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "Interior"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Floorplan",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "Floorplan"
+    );
+    this.importAll(
+      require.context(
+        "../../assets/images/Galary/Product",
+        false,
+        /\.(jpg|png)$/
+      ),
+      "Product"
+    );
   },
 };
 </script>

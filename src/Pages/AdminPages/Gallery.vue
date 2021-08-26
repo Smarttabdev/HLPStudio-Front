@@ -69,6 +69,9 @@
         </transition-group>
       </div>
     </VuePerfectScrollbar>
+    <div class="gallery-setting">
+      <div></div>
+    </div>
   </section>
 </template>
 
